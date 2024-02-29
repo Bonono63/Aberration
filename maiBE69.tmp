@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://butb7vik3dvdh"]
+[gd_scene load_steps=11 format=3 uid="uid://butb7vik3dvdh"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_4yyvx"]
 [ext_resource type="Script" path="res://player.gd" id="2_j3euv"]
-[ext_resource type="Script" path="res://2d_environment_controller.gd" id="2_wjhvn"]
 
 [sub_resource type="Gradient" id="Gradient_xm566"]
 offsets = PackedFloat32Array(0.477966, 0.589831, 0.613559, 0.627119, 0.667797, 0.918644, 0.962712)
@@ -29,9 +28,6 @@ size = Vector2(4, 30)
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsotn"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4giwl"]
 size = Vector2(32, 32)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5hcrr"]
@@ -66,10 +62,9 @@ handle_input_locally = false
 scaling_3d_mode = 2
 size = Vector2i(1080, 1440)
 render_target_update_mode = 4
-script = ExtResource("2_wjhvn")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.130526, 0.991445, 0, -0.991445, 0.130526, 0, 1, 0.355466)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 1, 0.355466)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
@@ -79,25 +74,16 @@ skeleton = NodePath("")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, -0.353553, 0.612372, 0, 0.436555, 0)
 
-[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
-
-[node name="player" type="RigidBody2D" parent="SubViewportContainer/SubViewport"]
-mass = 0.01
-gravity_scale = 0.0
-inertia = 1.0
-can_sleep = false
+[node name="player" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+texture = SubResource("PlaceholderTexture2D_el017")
 script = ExtResource("2_j3euv")
 
-[node name="sprite" type="Sprite2D" parent="SubViewportContainer/SubViewport/player"]
-texture = SubResource("PlaceholderTexture2D_el017")
+[node name="Area2D" type="Area2D" parent="SubViewportContainer/SubViewport/player"]
 
-[node name="Area2D" type="Area2D" parent="SubViewportContainer/SubViewport/player/sprite"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/player/sprite/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/player/Area2D"]
 shape = SubResource("RectangleShape2D_lsotn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/player"]
-shape = SubResource("RectangleShape2D_4giwl")
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport/player"]
 
-[node name="Dummy" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 texture = SubResource("PlaceholderTexture2D_5hcrr")

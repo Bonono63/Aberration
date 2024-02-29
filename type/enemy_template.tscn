@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1o75phb6fk3e"]
+[gd_scene load_steps=3 format=3 uid="uid://d1o75phb6fk3e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mqdr7"]
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qfi"]
 size = Vector2(32, 32)
 
 [node name="Enemy_Template" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_mqdr7")
 
 [node name="Area2D" type="Area2D" parent="."]
 

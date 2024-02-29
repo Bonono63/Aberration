@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwfsdwny6hpg4"]
+
+[ext_resource type="Script" path="res://bullets/projectile.gd" id="1_kvl0p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aobdn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dfps"]
+size = Vector2(16, 16)
+
+[node name="player_bullet" type="Sprite2D" groups=["player_bullet"]]
+texture = SubResource("PlaceholderTexture2D_aobdn")
+script = ExtResource("1_kvl0p")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8dfps")

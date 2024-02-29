@@ -82,10 +82,8 @@ transform = Transform3D(0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.70710
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 
 [node name="player" type="RigidBody2D" parent="SubViewportContainer/SubViewport"]
-mass = 0.01
+mass = 90.0
 gravity_scale = 0.0
-inertia = 1.0
-can_sleep = false
 script = ExtResource("2_j3euv")
 
 [node name="sprite" type="Sprite2D" parent="SubViewportContainer/SubViewport/player"]
